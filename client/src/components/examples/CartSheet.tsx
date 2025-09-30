@@ -2,7 +2,7 @@ import { useState } from 'react';
 import CartSheet from '../CartSheet';
 import { Button } from '@/components/ui/button';
 import tshirtImage from '@assets/stock_images/white_t-shirt_mockup_3d560599.jpg';
-import shortsImage from '@assets/stock_images/athletic_shorts_spor_6e5c9880.jpg';
+import shoesImage from '@assets/stock_images/white_athletic_shoes_cdbcb3e8.jpg';
 
 export default function CartSheetExample() {
   const [open, setOpen] = useState(false);
@@ -20,11 +20,11 @@ export default function CartSheetExample() {
     {
       id: '2',
       productId: 'p2',
-      name: 'Athletic Running Shorts',
-      price: 29.99,
-      image: shortsImage,
-      size: 'L',
-      color: 'Black',
+      name: 'Maple Leaf Running Shoes',
+      price: 89.99,
+      image: shoesImage,
+      size: '10',
+      color: 'White',
       quantity: 1
     }
   ]);

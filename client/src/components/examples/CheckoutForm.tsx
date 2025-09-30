@@ -12,10 +12,10 @@ export default function CheckoutFormExample() {
     },
     {
       id: '2',
-      name: 'Athletic Running Shorts',
-      price: 29.99,
-      size: 'L',
-      color: 'Black',
+      name: 'Maple Leaf Running Shoes',
+      price: 89.99,
+      size: '10',
+      color: 'White',
       quantity: 1
     }
   ];
