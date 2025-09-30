@@ -9,9 +9,8 @@ import Footer from "@/components/Footer";
 
 // todo: remove mock functionality
 import tshirt1 from "@assets/stock_images/white_t-shirt_mockup_3d560599.jpg";
-import tshirt2 from "@assets/stock_images/white_t-shirt_mockup_c30c5479.jpg";
-import shorts1 from "@assets/stock_images/athletic_shorts_spor_6e5c9880.jpg";
-import shorts2 from "@assets/stock_images/athletic_shorts_spor_9badef95.jpg";
+import shoes1 from "@assets/stock_images/white_athletic_shoes_cdbcb3e8.jpg";
+import shoes2 from "@assets/stock_images/white_athletic_shoes_4586f7ea.jpg";
 
 export default function Home() {
   const [, setLocation] = useLocation();
@@ -33,30 +32,21 @@ export default function Home() {
     },
     {
       id: "2",
-      name: "Classic Runner Tee",
-      price: 32.99,
-      category: "T-Shirts",
-      image: tshirt2,
-      colors: ['#000000', '#ffffff', '#22c55e'],
-      sizes: ['S', 'M', 'L', 'XL']
+      name: "Maple Leaf Running Shoes",
+      price: 89.99,
+      category: "Shoes",
+      image: shoes1,
+      colors: ['#ffffff', '#dc2626'],
+      sizes: ['7', '8', '9', '10', '11', '12']
     },
     {
       id: "3",
-      name: "Athletic Running Shorts",
-      price: 29.99,
-      category: "Shorts",
-      image: shorts1,
-      colors: ['#000000', '#2563eb', '#dc2626'],
-      sizes: ['S', 'M', 'L', 'XL']
-    },
-    {
-      id: "4",
-      name: "Performance Shorts",
-      price: 31.99,
-      category: "Shorts",
-      image: shorts2,
-      colors: ['#000000', '#2563eb'],
-      sizes: ['S', 'M', 'L', 'XL', '2XL']
+      name: "Canadian Pride Sneakers",
+      price: 94.99,
+      category: "Shoes",
+      image: shoes2,
+      colors: ['#ffffff', '#dc2626'],
+      sizes: ['7', '8', '9', '10', '11', '12']
     }
   ];
 
@@ -82,7 +72,7 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {mockProducts.map((product) => (
               <ProductCard
                 key={product.id}

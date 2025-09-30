@@ -8,9 +8,8 @@ import { useToast } from "@/hooks/use-toast";
 
 // todo: remove mock functionality
 import tshirt1 from "@assets/stock_images/white_t-shirt_mockup_3d560599.jpg";
-import tshirt2 from "@assets/stock_images/white_t-shirt_mockup_c30c5479.jpg";
-import shorts1 from "@assets/stock_images/athletic_shorts_spor_6e5c9880.jpg";
-import shorts2 from "@assets/stock_images/athletic_shorts_spor_9badef95.jpg";
+import shoes1 from "@assets/stock_images/white_athletic_shoes_cdbcb3e8.jpg";
+import shoes2 from "@assets/stock_images/white_athletic_shoes_4586f7ea.jpg";
 
 export default function ProductPage() {
   const [, params] = useRoute("/product/:id");
@@ -35,33 +34,23 @@ export default function ProductPage() {
     },
     "2": {
       id: "2",
-      name: "Classic Runner Tee",
-      description: "Breathable athletic t-shirt designed for runners. Features moisture-wicking fabric and a comfortable fit. Perfect for training or everyday wear while supporting a great cause.",
-      price: 32.99,
-      category: "T-Shirts",
-      image: tshirt2,
-      colors: ['#000000', '#ffffff', '#22c55e'],
-      sizes: ['S', 'M', 'L', 'XL']
+      name: "Maple Leaf Running Shoes",
+      description: "Premium white running shoes featuring the iconic Canadian maple leaf. Designed for comfort and performance, these shoes honor Terry Fox's journey across Canada. Advanced cushioning and breathable materials make every step count.",
+      price: 89.99,
+      category: "Shoes",
+      image: shoes1,
+      colors: ['#ffffff', '#dc2626'],
+      sizes: ['7', '8', '9', '10', '11', '12']
     },
     "3": {
       id: "3",
-      name: "Athletic Running Shorts",
-      description: "High-performance running shorts with built-in liner and zippered pocket. Lightweight and designed for maximum mobility during your runs. Support cancer research with every stride.",
-      price: 29.99,
-      category: "Shorts",
-      image: shorts1,
-      colors: ['#000000', '#2563eb', '#dc2626'],
-      sizes: ['S', 'M', 'L', 'XL']
-    },
-    "4": {
-      id: "4",
-      name: "Performance Shorts",
-      description: "Premium athletic shorts with advanced moisture-wicking technology. Ideal for intense workouts and long-distance running. Join the marathon of hope with your purchase.",
-      price: 31.99,
-      category: "Shorts",
-      image: shorts2,
-      colors: ['#000000', '#2563eb'],
-      sizes: ['S', 'M', 'L', 'XL', '2XL']
+      name: "Canadian Pride Sneakers",
+      description: "White athletic sneakers with maple leaf detailing. Built for runners who want to make a statement while supporting cancer research. Lightweight construction with superior arch support for long-distance comfort.",
+      price: 94.99,
+      category: "Shoes",
+      image: shoes2,
+      colors: ['#ffffff', '#dc2626'],
+      sizes: ['7', '8', '9', '10', '11', '12']
     }
   };
 
