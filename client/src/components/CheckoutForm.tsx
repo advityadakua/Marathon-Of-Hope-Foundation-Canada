@@ -34,6 +34,14 @@ export default function CheckoutForm({ items, onSubmit }: CheckoutFormProps) {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Basic validation - just check if fields are filled
+    if (!formData.name || !formData.email || !formData.cardNumber || !formData.expiry || !formData.cvv) {
+      alert('Please fill in all fields');
+      return;
+    }
+    
+    // Don't save any payment info - just pass name and email
     onSubmit?.({ name: formData.name, email: formData.email });
   };
 
@@ -155,12 +163,17 @@ export default function CheckoutForm({ items, onSubmit }: CheckoutFormProps) {
                 onClick={handleSubmit}
                 data-testid="button-place-order"
               >
-                Place Order
+                Place Order (Demo)
               </Button>
 
-              <p className="text-xs text-center text-muted-foreground">
-                This is a demo checkout. No real payment will be processed.
-              </p>
+              <div className="space-y-1">
+                <p className="text-xs text-center text-muted-foreground">
+                  🔒 This is a demo checkout - No real payment processing
+                </p>
+                <p className="text-xs text-center text-muted-foreground">
+                  Payment information is not saved or transmitted
+                </p>
+              </div>
             </CardContent>
           </Card>
         </div>

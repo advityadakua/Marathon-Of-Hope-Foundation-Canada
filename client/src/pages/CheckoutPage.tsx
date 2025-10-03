@@ -28,12 +28,14 @@ export default function CheckoutPage() {
   ]);
 
   const handleSubmit = (data: { name: string; email: string; }) => {
-    // todo: remove mock functionality
+    // Generate a fake order ID for demo purposes
     const orderId = `MOH-${new Date().getFullYear()}-${Math.floor(Math.random() * 100000).toString().padStart(6, '0')}`;
     const total = mockCartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
     
-    console.log('Order submitted:', { orderId, ...data, total });
+    // Log to console only - no data is saved to database or backend
+    console.log('Demo order submitted (not saved):', { orderId, ...data, total });
     
+    // Redirect to order confirmation with demo data
     setLocation(`/order-confirmation?id=${orderId}&name=${encodeURIComponent(data.name)}&email=${encodeURIComponent(data.email)}&total=${total}`);
   };
 
