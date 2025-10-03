@@ -7,8 +7,8 @@ import CartSheet from "@/components/CartSheet";
 import { useToast } from "@/hooks/use-toast";
 
 // todo: remove mock functionality
-import tshirt1 from "@assets/attached_assets/T-Shirt_1759512638377.png";
-import shoes1 from "@assets/attached_assets/Shoe_1759512694171.png";
+import tshirt1 from "../../../attached_assets/T-Shirt_1759512638377.png";
+import shoes1 from "../../../attached_assets/Shoe_1759512694171.png";
 
 export default function ProductPage() {
   const [, params] = useRoute("/product/:id");
