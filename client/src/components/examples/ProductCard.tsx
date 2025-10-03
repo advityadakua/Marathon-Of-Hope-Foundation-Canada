@@ -1,5 +1,5 @@
 import ProductCard from '../ProductCard';
-import tshirtImage from '@assets/stock_images/white_t-shirt_mockup_3d560599.jpg';
+import tshirtImage from '@assets/attached_assets/T-Shirt_1759512638377.png';
 
 export default function ProductCardExample() {
   return (

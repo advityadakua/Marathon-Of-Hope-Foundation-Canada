@@ -7,9 +7,9 @@ import CartSheet from "@/components/CartSheet";
 import { useToast } from "@/hooks/use-toast";
 
 // todo: remove mock functionality
-import tshirt1 from "@assets/stock_images/white_t-shirt_mockup_3d560599.jpg";
-import shoes1 from "@assets/stock_images/white_athletic_shoes_cdbcb3e8.jpg";
-import shoes2 from "@assets/stock_images/white_athletic_shoes_4586f7ea.jpg";
+import tshirt1 from "@assets/attached_assets/T-Shirt_1759512638377.png";
+import shoes1 from "@assets/attached_assets/Shoe_1759512694171.png";
+import shoes2 from "@assets/attached_assets/Shoe_1759512694171.png";
 
 export default function ProductPage() {
   const [, params] = useRoute("/product/:id");
