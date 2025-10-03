@@ -9,7 +9,6 @@ import { useToast } from "@/hooks/use-toast";
 // todo: remove mock functionality
 import tshirt1 from "@assets/attached_assets/T-Shirt_1759512638377.png";
 import shoes1 from "@assets/attached_assets/Shoe_1759512694171.png";
-import shoes2 from "@assets/attached_assets/Shoe_1759512694171.png";
 
 export default function ProductPage() {
   const [, params] = useRoute("/product/:id");
@@ -39,16 +38,6 @@ export default function ProductPage() {
       price: 89.99,
       category: "Shoes",
       image: shoes1,
-      colors: ['#ffffff', '#dc2626'],
-      sizes: ['7', '8', '9', '10', '11', '12']
-    },
-    "3": {
-      id: "3",
-      name: "Canadian Pride Sneakers",
-      description: "White athletic sneakers with maple leaf detailing. Built for runners who want to make a statement while supporting cancer research. Lightweight construction with superior arch support for long-distance comfort.",
-      price: 94.99,
-      category: "Shoes",
-      image: shoes2,
       colors: ['#ffffff', '#dc2626'],
       sizes: ['7', '8', '9', '10', '11', '12']
     }
