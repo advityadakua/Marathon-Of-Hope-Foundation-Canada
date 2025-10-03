@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Terry Fox Foundation Shop{% endblock %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="min-h-screen bg-gray-50">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <a href="/" class="text-2xl font-bold text-blue-600">Terry Fox Foundation</a>
+            <nav class="hidden md:flex space-x-6">
+                <a href="/" class="text-gray-700 hover:text-blue-600">Home</a>
+                <a href="/#products" class="text-gray-700 hover:text-blue-600">Products</a>
+                <a href="/#mission" class="text-gray-700 hover:text-blue-600">Our Mission</a>
+            </nav>
+            <button onclick="toggleCart()" class="relative">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                </svg>
+                <span id="cart-count" class="absolute -top-2 -right-2 bg-blue-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">0</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 mt-20">
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex items-center justify-center space-x-2 mb-4">
+                <svg class="w-6 h-6 text-red-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path>
+                </svg>
+                <p class="text-lg">Supporting Cancer Research</p>
+            </div>
+            <p class="text-gray-400">Every purchase helps fund cancer research and supports the Terry Fox Foundation's mission</p>
+            <p class="text-gray-500 text-sm mt-4">&copy; 2024 Terry Fox Foundation Shop. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div id="cart-sidebar" class="fixed inset-y-0 right-0 w-96 bg-white shadow-xl transform translate-x-full transition-transform duration-300 z-50">
+        <div class="h-full flex flex-col">
+            <div class="p-4 border-b flex items-center justify-between">
+                <h2 class="text-xl font-bold">Shopping Cart</h2>
+                <button onclick="toggleCart()" class="text-gray-500 hover:text-gray-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div id="cart-items" class="flex-1 overflow-y-auto p-4"></div>
+            <div class="p-4 border-t">
+                <div class="flex justify-between mb-4">
+                    <span class="font-bold">Total:</span>
+                    <span id="cart-total" class="font-bold">$0.00</span>
+                </div>
+                <a href="/checkout" class="block w-full bg-blue-600 text-white text-center py-3 rounded-lg hover:bg-blue-700">Checkout</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleCart() {
+            const sidebar = document.getElementById('cart-sidebar');
+            sidebar.classList.toggle('translate-x-full');
+            loadCart();
+        }
+
+        async function loadCart() {
+            const response = await fetch('/api/cart');
+            const cart = await response.json();
+            document.getElementById('cart-count').textContent = cart.length;
+            // Update cart items display
+        }
+
+        loadCart();
+    </script>
+</body>
+</html>
