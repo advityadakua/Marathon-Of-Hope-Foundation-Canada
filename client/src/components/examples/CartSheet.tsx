@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import CartSheet from '../CartSheet';
 import { Button } from '@/components/ui/button';
-import tshirtImage from '@assets/stock_images/white_t-shirt_mockup_3d560599.jpg';
-import shoesImage from '@assets/stock_images/white_athletic_shoes_cdbcb3e8.jpg';
+import tshirtImage from '../../../attached_assets/T-Shirt_1759512638377.png';
+import shoesImage from '../../../attached_assets/Shoe_1759512694171.png';
 
 export default function CartSheetExample() {
   const [open, setOpen] = useState(false);

@@ -8,9 +8,8 @@ import MissionSection from "@/components/MissionSection";
 import Footer from "@/components/Footer";
 
 // todo: remove mock functionality
-import tshirt1 from "@assets/stock_images/white_t-shirt_mockup_3d560599.jpg";
-import shoes1 from "@assets/stock_images/white_athletic_shoes_cdbcb3e8.jpg";
-import shoes2 from "@assets/stock_images/white_athletic_shoes_4586f7ea.jpg";
+import tshirt1 from "../../../attached_assets/T-Shirt_1759512638377.png";
+import shoes1 from "../../../attached_assets/Shoe_1759512694171.png";
 
 export default function Home() {
   const [, setLocation] = useLocation();
@@ -36,15 +35,6 @@ export default function Home() {
       price: 89.99,
       category: "Shoes",
       image: shoes1,
-      colors: ['#ffffff', '#dc2626'],
-      sizes: ['7', '8', '9', '10', '11', '12']
-    },
-    {
-      id: "3",
-      name: "Canadian Pride Sneakers",
-      price: 94.99,
-      category: "Shoes",
-      image: shoes2,
       colors: ['#ffffff', '#dc2626'],
       sizes: ['7', '8', '9', '10', '11', '12']
     }
