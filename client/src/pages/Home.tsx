@@ -14,7 +14,7 @@ import shoes1 from "../../../attached_assets/Shoe_1759512694171.png";
 export default function Home() {
   const [, setLocation] = useLocation();
   const [cartOpen, setCartOpen] = useState(false);
-  
+
   // todo: remove mock functionality
   const [cartItems, setCartItems] = useState<any[]>([]);
 
@@ -50,9 +50,9 @@ export default function Home() {
         cartItemCount={cartItems.length}
         onCartClick={() => setCartOpen(true)}
       />
-      
+
       <Hero onShopClick={scrollToProducts} />
-      
+
       <section id="products" className="py-16 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
@@ -61,7 +61,7 @@ export default function Home() {
               Every purchase supports life-saving cancer research
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {mockProducts.map((product) => (
               <ProductCard
@@ -75,7 +75,7 @@ export default function Home() {
       </section>
 
       <MissionSection />
-      
+
       <Footer />
 
       <CartSheet
