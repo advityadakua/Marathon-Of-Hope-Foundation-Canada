@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import heroImage from "@assets/stock_images/marathon_runner_dete_c71d73cc.jpg";
+import heroImage from "../../../attached_assets/terry-marathon_1759512927473.jpg";
 
 interface HeroProps {
   onShopClick?: () => void;
@@ -9,7 +9,7 @@ export default function Hero({ onShopClick }: HeroProps) {
   return (
     <div className="relative min-h-[600px] lg:min-h-[700px] w-full flex items-center justify-center">
       <div 
-        className="absolute inset-0 bg-cover bg-center"
+        className="absolute inset-0 bg-cover bg-center blur-sm"
         style={{ backgroundImage: `url(${heroImage})` }}
       />
       <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/40" />
