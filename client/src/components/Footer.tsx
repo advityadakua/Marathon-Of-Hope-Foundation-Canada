@@ -9,7 +9,7 @@ export default function Footer() {
             <h3 className="font-bold text-lg mb-4">About the Foundation</h3>
             <p className="text-sm text-muted-foreground">
               The Marathon of Hope Foundation continues Terry Fox's legacy by funding cancer research.
-              Every purchase directly supports life-saving research.
+              Every purchase directly supports life-saving research
             </p>
           </div>
           

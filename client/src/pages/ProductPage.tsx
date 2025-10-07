@@ -15,7 +15,7 @@ export default function ProductPage() {
   const [, setLocation] = useLocation();
   const { toast } = useToast();
   const [cartOpen, setCartOpen] = useState(false);
-  
+
   // todo: remove mock functionality
   const [cartItems, setCartItems] = useState<any[]>([]);
 
@@ -78,7 +78,7 @@ export default function ProductPage() {
     };
 
     setCartItems([...cartItems, newItem]);
-    
+
     toast({
       title: "Added to cart",
       description: `${product.name} (${size}, ${colorNames[color]})`,
@@ -91,12 +91,12 @@ export default function ProductPage() {
         cartItemCount={cartItems.length}
         onCartClick={() => setCartOpen(true)}
       />
-      
+
       <ProductDetail 
         product={product}
         onAddToCart={handleAddToCart}
       />
-      
+
       <Footer />
 
       <CartSheet
