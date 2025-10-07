@@ -44,6 +44,10 @@ export default function Home() {
     document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const scrollToMission = () => {
+    document.getElementById('mission')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
       <Header 
@@ -51,7 +55,7 @@ export default function Home() {
         onCartClick={() => setCartOpen(true)}
       />
 
-      <Hero onShopClick={scrollToProducts} />
+      <Hero onShopClick={scrollToProducts} onLearnClick={scrollToMission} />
 
       <section id="products" className="py-16 px-6">
         <div className="max-w-7xl mx-auto">
@@ -74,7 +78,9 @@ export default function Home() {
         </div>
       </section>
 
-      <MissionSection />
+      <div id="mission">
+        <MissionSection />
+      </div>
 
       <Footer />
 

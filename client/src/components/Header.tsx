@@ -1,7 +1,7 @@
-import { ShoppingCart } from "lucide-react";
+import { ShoppingCart, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 
 interface HeaderProps {
   cartItemCount?: number;
@@ -9,19 +9,34 @@ interface HeaderProps {
 }
 
 export default function Header({ cartItemCount = 0, onCartClick }: HeaderProps) {
+  const [location] = useLocation();
+  const showBackButton = location !== '/';
+
   return (
     <header className="sticky top-0 z-50 bg-card border-b border-card-border">
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between gap-4">
-          <Link href="/" data-testid="link-home">
-            <h1 className="text-xl font-bold text-primary">Marathon of Hope Foundation</h1>
+          <div className="flex items-center gap-4">
+            {showBackButton && (
+              <Button 
+                variant="ghost" 
+                size="icon"
+                onClick={() => window.history.back()}
+                data-testid="button-back"
+              >
+                <ArrowLeft className="h-5 w-5" />
+              </Button>
+            )}
+            <Link href="/" data-testid="link-home">
+              <h1 className="text-xl font-bold text-primary">Marathon of Hope Foundation</h1>
+            </Link>
           </Link>
-          
+
           <nav className="hidden md:flex items-center gap-6">
             <Link href="/" data-testid="link-shop">
               <span className="text-foreground hover-elevate active-elevate-2 px-3 py-2 rounded-md">Shop</span>
             </Link>
-            <Link href="/about" data-testid="link-about">
+            <Link href="/about#mission" data-testid="link-about">
               <span className="text-foreground hover-elevate active-elevate-2 px-3 py-2 rounded-md">Our Mission</span>
             </Link>
           </nav>

@@ -16,7 +16,7 @@ export default function MissionSection() {
           <h2 className="text-3xl lg:text-4xl font-bold mb-4">Our Mission</h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Honoring Terry Fox's incredible journey by funding groundbreaking cancer research
-            and inspiring hope for millions around the world.
+            and inspiring hope for millions around the world
           </p>
         </div>
 
