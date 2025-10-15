@@ -1,0 +1,17 @@
+import matplotlib.pyplot as plt
+import matplotlib.image as mpimg
+
+def show_marathon_of_hope_ad():
+    try:
+        img = mpimg.imread('https://i.imgur.com/hHOn4e0.png')
+        plt.imshow(img)
+        plt.axis('off')
+        plt.title('Marathon of Hope Ad')
+        plt.show()
+    except FileNotFoundError:
+        print("Error: File not found.")
+    except Exception as e:
+        print(f"An error occurred: {e}")
+
+if __name__ == "__main__":
+    show_marathon_of_hope_ad()

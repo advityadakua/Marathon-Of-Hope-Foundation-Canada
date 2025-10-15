@@ -1,0 +1,3 @@
+import os
+
+os.remove("attached_assets/stock_images/people_running_toget_5cb169d8.jpg")

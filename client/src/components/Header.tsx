@@ -8,9 +8,12 @@ interface HeaderProps {
   onCartClick?: () => void;
 }
 
-export default function Header({ cartItemCount = 0, onCartClick }: HeaderProps) {
+export default function Header({
+  cartItemCount = 0,
+  onCartClick,
+}: HeaderProps) {
   const [location] = useLocation();
-  const showBackButton = location !== '/';
+  const showBackButton = location !== "/";
 
   return (
     <header className="sticky top-0 z-50 bg-card border-b border-card-border">
@@ -18,8 +21,8 @@ export default function Header({ cartItemCount = 0, onCartClick }: HeaderProps) 
         <div className="flex items-center justify-between gap-4">
           <div className="flex items-center gap-4">
             {showBackButton && (
-              <Button 
-                variant="ghost" 
+              <Button
+                variant="ghost"
                 size="icon"
                 onClick={() => window.history.back()}
                 data-testid="button-back"
@@ -28,29 +31,41 @@ export default function Header({ cartItemCount = 0, onCartClick }: HeaderProps) 
               </Button>
             )}
             <Link href="/" data-testid="link-home">
-              <h1 className="text-xl font-bold text-primary">Marathon of Hope Foundation</h1>
+              <h1 className="text-xl font-bold text-primary">
+                Marathon of Hope Foundation
+              </h1>
             </Link>
-          </Link>
+            <h1 className="text-l font-romancial text-primary">
+              Celebrating 45 years
+            </h1>
+          </div>
 
-          <nav className="hidden md:flex items-center gap-6">
+          {/* Removed navigation buttons (Shop and Our Mission) */}
+          <nav className="hidden md: flex items-center gap-6">
+            {/* 
             <Link href="/" data-testid="link-shop">
-              <span className="text-foreground hover-elevate active-elevate-2 px-3 py-2 rounded-md">Shop</span>
+              <span className="text-foreground hover-elevate active-elevate-2 px-3 py-2 rounded-md">
+                Shop
+              </span>
             </Link>
             <Link href="/about#mission" data-testid="link-about">
-              <span className="text-foreground hover-elevate active-elevate-2 px-3 py-2 rounded-md">Our Mission</span>
+              <span className="text-foreground hover-elevate active-elevate-2 px-3 py-2 rounded-md">
+                Our Mission
+              </span>
             </Link>
+            */}
           </nav>
 
-          <Button 
-            variant="ghost" 
-            size="icon" 
+          <Button
+            variant="ghost"
+            size="icon"
             className="relative"
             onClick={onCartClick}
             data-testid="button-cart"
           >
             <ShoppingCart className="h-5 w-5" />
             {cartItemCount > 0 && (
-              <Badge 
+              <Badge
                 className="absolute -top-1 -right-1 h-5 w-5 flex items-center justify-center p-0 text-xs"
                 data-testid="badge-cart-count"
               >
